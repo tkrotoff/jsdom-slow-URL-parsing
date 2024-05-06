@@ -1,0 +1,35 @@
+diff --git a/node_modules/whatwg-url/lib/URL-impl.js b/node_modules/whatwg-url/lib/URL-impl.js
+index eb66cae..1042729 100644
+--- a/node_modules/whatwg-url/lib/URL-impl.js
++++ b/node_modules/whatwg-url/lib/URL-impl.js
+@@ -244,3 +244,13 @@ exports.implementation = class URLImpl {
+     this._url.path = this._url.path.replace(/\u0020+$/u, "");
+   }
+ };
++
++class URLImpl extends URL {
++  constructor(globalObject, constructorArgs) {
++    const url = constructorArgs[0];
++    const base = constructorArgs[1];
++    super(url, base);
++  }
++}
++
++exports.implementation = URLImpl;
+diff --git a/node_modules/whatwg-url/lib/URLSearchParams-impl.js b/node_modules/whatwg-url/lib/URLSearchParams-impl.js
+index 934c4ff..f4c3305 100644
+--- a/node_modules/whatwg-url/lib/URLSearchParams-impl.js
++++ b/node_modules/whatwg-url/lib/URLSearchParams-impl.js
+@@ -137,3 +137,12 @@ exports.implementation = class URLSearchParamsImpl {
+     return urlencoded.serializeUrlencoded(this._list);
+   }
+ };
++
++class URLSearchParamsImpl extends URLSearchParams {
++  constructor(globalObject, constructorArgs) {
++    const init = constructorArgs[0];
++    super(init);
++  }
++}
++
++exports.implementation = URLSearchParamsImpl;
