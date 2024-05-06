@@ -1,0 +1,25 @@
+{
+  "name": "jsdom-slow-url-parsing",
+  "version": "0.0.0",
+  "description": "jsdom slow URL parsing",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "clean:all": "rm -rf node_modules package-lock.json",
+    "debug": "node --cpu-prof ./node_modules/.bin/vitest run",
+    "test": "vitest run",
+    "tsc": "tsc",
+    "format": "prettier --write .",
+    "lint": "npm run tsc",
+    "npm:update": "npm run clean:all && npx npm-check-updates --upgrade && npm install"
+  },
+  "devDependencies": {
+    "happy-dom": "^14.8.1",
+    "jsdom": "^24.0.0",
+    "msw": "^2.2.14",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  }
+}
