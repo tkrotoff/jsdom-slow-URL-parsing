@@ -2,16 +2,16 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
-    // JSDOM + MSW short URL: 23.951ms
-    // JSDOM + MSW long URL: 27.046ms
+    // JSDOM + MSW short URL: 99.363ms
+    // JSDOM + MSW long URL: 94.716ms
     //environment: 'node',
 
-    // JSDOM + MSW short URL: 20.962ms
-    // JSDOM + MSW long URL: 29.937ms
+    // JSDOM + MSW short URL: 97.201ms
+    // JSDOM + MSW long URL: 94.812ms
     //environment: 'happy-dom',
 
-    // JSDOM + MSW short URL: 66.226ms
-    // JSDOM + MSW long URL: 3.740s
+    // JSDOM + MSW short URL: 118.238ms
+    // JSDOM + MSW long URL: 2.331s
     environment: 'jsdom',
 
     poolOptions: {
@@ -21,6 +21,6 @@ export default defineConfig({
     },
 
     // Will be run before each test file
-    setupFiles: './src/vitest.setupFiles.ts'
+    setupFiles: './src/vitest.setupFiles.ts',
   }
 });
