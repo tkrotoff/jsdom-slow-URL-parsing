@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "happy-dom": "^14.8.1",
-    "jsdom": "^24.0.0",
+    "jsdom": "^26.1.0",
     "msw": "^2.2.14",
     "prettier": "^3.2.5",
     "typescript": "^5.4.5",
