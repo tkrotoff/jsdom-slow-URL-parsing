@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest';
 
-// JSDOM + MSW short URL: 66.226ms
+// JSDOM + MSW short URL: 118.238ms
 test('JSDOM + MSW short URL', async () => {
   console.time('JSDOM + MSW short URL');
 
@@ -17,7 +17,7 @@ test('JSDOM + MSW short URL', async () => {
   });
 });
 
-// JSDOM + MSW long URL: 3.740s
+// JSDOM + MSW long URL: 2.331s
 test('JSDOM + MSW long URL', async () => {
   const queryParams = 'x'.repeat(5000);
 
