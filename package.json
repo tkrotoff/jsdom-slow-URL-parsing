@@ -7,12 +7,13 @@
   "type": "module",
   "scripts": {
     "clean:all": "rm -rf node_modules package-lock.json",
+    "npm:update": "npm run clean:all && npx npm-check-updates --upgrade && npm install",
+    "patch:whatwg-url": "cd node_modules/whatwg-url && patch -p1 < ../../patches/whatwg-url+14.2.0.patch",
     "debug": "node --cpu-prof ./node_modules/.bin/vitest run",
     "test": "vitest run",
     "tsc": "tsc",
     "format": "prettier --write .",
-    "lint": "npm run tsc",
-    "npm:update": "npm run clean:all && npx npm-check-updates --upgrade && npm install"
+    "lint": "npm run tsc"
   },
   "devDependencies": {
     "happy-dom": "^18.0.1",
